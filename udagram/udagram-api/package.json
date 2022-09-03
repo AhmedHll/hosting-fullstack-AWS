@@ -12,7 +12,7 @@
     "dev": "npx ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy && eb setenv DB_PORT=$DB_PORT JWT_SECRET=$JWT_SECRET POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME RDS_DIALECT=$RDS_DIALECT URL=$URL AWS_BUCKET=$AWS_BUCKET AWS_PROFILE=$AWS_PROFILE",
+    "deploy": "npm install - f && npm run build && chmod +x ./bin/deploy.sh && ./bin/deploy.sh",
     "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +20,7 @@
   "author": "Gabriel Ruttner",
   "license": "ISC",
   "dependencies": {
+    "-": "^0.0.1",
     "@types/bcryptjs": "2.4.2",
     "@types/jsonwebtoken": "^8.3.2",
     "aws-sdk": "^2.429.0",
@@ -29,6 +30,7 @@
     "dotenv": "^8.2.0",
     "email-validator": "^2.0.4",
     "express": "^4.16.4",
+    "f": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
