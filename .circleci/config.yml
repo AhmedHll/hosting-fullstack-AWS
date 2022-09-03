@@ -8,14 +8,11 @@ orbs:
 jobs:
   build:
     docker:
-      # the base image can run most needed actions with orbs
       - image: "cimg/node:14.15"
     steps:
-      # install node and checkout code
       - node/install:
           node-version: '14.15'         
       - checkout
-      # Use root level package.json to install dependencies in the frontend app
       - run:
           name: Install Front-End Dependencies
           command: |
@@ -29,17 +26,11 @@ jobs:
           name: Install API Dependencies
           command: |
             npm run api:install
-        # TODO: Lint the frontend
-        # - run:
-        #     name: Front-End Lint
-        #     command: |
-        #       echo "TODO: Lint the frontend"
         TODO: Build the frontend app
       - run:
           name: Front-End Build
           command: |
-            npm run frontend:build
-      # TODO: Build the backend API      
+            npm run frontend:build 
       - run:
           name: API Build
           command: |
