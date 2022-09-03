@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "aws s3 cp --recursive --acl public-read ./www s3://hall-bucket/",
+    "deploy": "npm install -f && npm run build && chmod +x bin/deploy.sh && './bin/deploy.sh'",
     "bin": "aws s3 cp --recursive --acl public-read ./www s3://hall-bucket/",
     "test": "ng test --watch=false",
     "lint": "ng lint",
