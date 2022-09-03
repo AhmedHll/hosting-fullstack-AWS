@@ -6,7 +6,7 @@ http://hall-bucket.s3-website-us-east-1.amazonaws.com
 ---
 ### **architecture diagram.**
 [link](https://lucid.app/lucidchart/0d610c11-44f5-4bad-8804-8d93c5c958e0/edit?viewport_loc=-978%2C-330%2C4039%2C2017%2C0_0&invitationId=inv_c76acbd3-dd4b-4ef3-91c5-9e3b8dd9e442#)
-![architecture diagram](/screenshots/architecture-diagram.png?raw=true "Optional Title")
+![architecture diagram](/screenshots/architecture-diagram2.png?raw=true "Optional Title")
 
 ---
 Click here  [screenshots](/screenshots/) to see the Screenshots
